@@ -1,6 +1,9 @@
 const input = document.querySelector("textarea");
 const resultBlock = document.querySelector(".result");
 
+input.addEventListener('keyup', process);
+input.addEventListener('change', process);
+
 const engReg = /[a-zA-Z]/;
 const rusReg = /[а-яА-Я]/;
 const numReg = /^\d\. /;
@@ -42,3 +45,5 @@ function compareLangs(a, b) {
   }
   return false;
 }
+
+process();
