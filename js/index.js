@@ -8,6 +8,7 @@ const engReg = /[a-zA-Z]/;
 const rusReg = /[а-яА-Я]/;
 const numReg = /^\d\. /;
 const newlineReg = /\s*\n\s*/;
+const emptyStrStart = /^\s*/;
 
 function process() {
   const arr = parseArray(input.value);
@@ -23,6 +24,7 @@ function writeText(array) {
 
 function parseArray(str) {
   let arr = str.split(newlineReg);
+  arr[0] = arr[0].replace(emptyStrStart, '');
   for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i].replace(numReg, "");
   }
