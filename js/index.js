@@ -35,7 +35,7 @@ function sortArray(el1, el2) {
   if (compareLangs(el1[0], el2[0])) {
     return el1 > el2 ? 1 : -1;
   }
-  return rusReg.test(el2) ? 1 : -1;
+  return rusReg.test(el2[0]) ? 1 : -1;
 }
 
 function compareLangs(a, b) {
